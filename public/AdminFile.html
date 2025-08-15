@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schedule Sync Dashboard</title>
+ <link rel="stylesheet" href="./css/AdminFile.css">
+ </head>
+  <body>
+      <aside class="sidebar">
+      <h1><span class="purple">Schedule</span> Sync</h1>
+      <nav>
+        <ul>
+          <li><i class="icon">📋</i> <a href="#">Dashboard</a></li>
+          <li><i class="icon">📅</i> <button id="AddLecture">Add Lecture</button></li>
+          <li><i class="icon">🛫</i> <button id="ApproveLeave">Approve Leave</button></li>
+          <li><i class="icon">📥</i> <button id="Adjustment">Adjustment</button></li>
+        </ul>
+      </nav>
+      <div class="current-view">
+        <h4>Current View</h4>
+        <div class="view selected">
+          <i class="icon">🤝</i>
+          Meeting
+        </div>
+        <div class="view">
+          <i class="icon">☁️</i>
+          Scheduling
+        </div>
+      </div>
+      <button class="event-btn">Upcoming Event</button>
+    </aside>
+
+  
+  <div class="main">
+
+    <div class="header">
+      <div class="left">
+        <h1>Dashboard</h1>
+        <div>
+          <select id="teacherSelect">
+            <option>Select Teacher</option>
+
+          </select>
+        </div>
+      </div>
+      <div class="right">
+        <h4 id="week">Today</h4>
+        <p><strong id="date">14/7/2025</strong></p>
+        <p class="time">1:26:47 pm</p>
+        <p class="teacher-name"><strong id="TeacherName">Name (Admin)</strong></p>
+      </div>
+    </div>
+    
+     <div id="timetable-content">
+     <section class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Days/Time</th>
+              <th>Period 1</th>
+              <th>Period 2</th>
+              <th>Period 3</th>
+              <th>Period 4</th>
+              <th>Period 5</th>
+              <th>Period 6</th>
+              <th>Period 7</th>
+              <th>Period 8</th>
+            </tr>
+          </thead>
+          <tbody>
+        <tr><th id="Monday">Monday</th><td id="Monday-Period 1"></td><td id="Monday-Period 2"></td><td id="Monday-Period 3"></td><td id="Monday-Period 4"></td><td id="Monday-Period 5"></td><td id="Monday-Period 6"></td><td id="Monday-Period 7"></td><td id="Monday-Period 8"></td></tr>
+        <tr><th id="Tuesday">Tuesday</th><td id="Tuesday-Period 1"></td><td id="Tuesday-Period 2"></td><td id="Tuesday-Period 3"></td><td id="Tuesday-Period 4"></td><td id="Tuesday-Period 5"></td><td id="Tuesday-Period 6"></td><td id="Tuesday-Period 7"></td><td id="Tuesday-Period 8"></td></tr>
+        <tr><th id="Wednesday">Wednesday</th><td id="Wednesday-Period 1"></td><td id="Wednesday-Period 2"></td><td id="Wednesday-Period 3"></td><td id="Wednesday-Period 4"></td><td id="Wednesday-Period 5"></td><td id="Wednesday-Period 6"></td><td id="Wednesday-Period 7"></td><td id="Wednesday-Period 8"></td></tr>
+        <tr><th id="Thursday">Thursday</th><td id="Thursday-Period 1"></td><td id="Thursday-Period 2"></td><td id="Thursday-Period 3"></td><td id="Thursday-Period 4"></td><td id="Thursday-Period 5"></td><td id="Thursday-Period 6"></td><td id="Thursday-Period 7"></td><td id="Thursday-Period 8"></td></tr>
+        <tr><th id="Friday">Friday</th><td id="Friday-Period 1"></td><td id="Friday-Period 2"></td><td id="Friday-Period 3"></td><td id="Friday-Period 4"></td><td id="Friday-Period 5"></td><td id="Friday-Period 6"></td><td id="Friday-Period 7"></td><td id="Friday-Period 8"></td></tr>
+        <tr><th id="Saturday">Saturday</th><td id="Saturday-Period 1"></td><td id="Saturday-Period 2"></td><td id="Saturday-Period 3"></td><td id="Saturday-Period 4"></td><td id="Saturday-Period 5"></td><td id="Saturday-Period 6"></td><td id="Saturday-Period 7"></td><td id="Saturday-Period 8"   ></td></tr>
+          </tbody>
+        </table>
+      </section>
+   </div>
+<div id="AddLectureContent" style="display: none;">
+  <h2>Add Lecture</h2>
+   <form id="timetableForm">
+      <label for="lecture">Lecture Number</label>
+      <select id="lecture" name="lecture">
+       <option value="period1">Period 1</option>
+       <option value="period2">Period 2</option>
+       <option value="period3">Period 3</option>
+       <option value="period4">Period 4</option>
+       <option value="period5">Period 5</option>
+       <option value="period6">Period 6</option>
+       <option value="period7">Period 7</option>
+       <option value="period8">Period 8</option>
+      </select>
+
+      <label for="subject">Subject Name</label>
+      <input type="text" id="subject" name="subject" placeholder="Enter subject name">
+      <label for="day">Day</label>
+      <select id="day" name="day">
+        <option value="Monday">Monday</option>
+        <option value="Tuesday">Tuesday</option>
+        <option value="Wednesday">Wednesday</option>
+        <option value="Thursday">Thursday</option>
+        <option value="Friday">Friday</option>
+      </select>
+      <div class="time-row">
+        <div>
+          <label for="start">Start Time</label>
+          <input type="time" id="start" name="start" value="13:51">
+        </div>
+        <div>
+          <label for="end">End Time</label>
+          <input type="time" id="end" name="end" value="00:54">
+        </div>
+      </div>
+
+      <label for="room">Room Number</label>
+      <input type="text" id="room" name="room" placeholder="Enter room number">
+
+      <div class="button-group">
+        <button type="button" class="btn btn-cancel">Cancel</button>
+        <button type="submit" class="btn btn-save">Save</button>
+      </div>
+    </form>
+</div>
+
+<div id="ApproveLeaveContent" style="display: none;">
+  <h2>Approve Leave</h2>
+  <div id="leaveRequests">
+    
+</div>
+</div>
+
+<div id="AdjustmentContent" style="display: none;">
+  <div id="adjustments"></div>
+</div>
+  </div>
+<script src="./js/AdminFile.js"></script>
+
+</body>          
+</html>

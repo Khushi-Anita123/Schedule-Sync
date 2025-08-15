@@ -1,0 +1,51 @@
+.background-div {
+  background-image: url('Screenshot 2025-07-24 170111.png');
+  background-size: cover;        
+  background-position: center;  
+  background-repeat: no-repeat;   
+  width: 400px;
+  height: 500px;  
+}   
+input{
+    width: 80%;
+    padding: 10px;
+    margin: 2px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+#outerdiv{
+  width: 800px;
+  height: 500px;
+  border:1px solid rgb(128, 198, 165);
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;}
+body{
+background: linear-gradient(to bottom, #3b3d3c 0%, #adb1af 100%);
+background-repeat: no-repeat;
+}
+#signup{
+    width: 400px;
+    height: 500px;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    background-color: rgb(128, 198, 165);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+     width: 90%;
+}
+#role {
+    width: 87%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}

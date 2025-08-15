@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schedule Sync Dashboard</title>
+  <link rel="stylesheet" href="./css/Teacher.css">
+</head>
+<body>
+  <aside class="sidebar">
+      <h1><span class="purple">Schedule</span> Sync</h1>
+      <button  id="logoutButton">Logout</button>
+      <nav>
+        <ul>
+          <li><i class="icon">📋</i> <a href="#">Dashboard</a></li>
+          <li><i class="icon">🛫</i> <button id="AppealLeave">Appeal Leave</button></li>
+          <li><i class="icon">📥</i> <button id="timetable">Timetable</button></li>
+          <li><i class="icon">🙏</i><button id="yourleaverequest">Your Leave Request</button></li>
+          <li><i class="icon">📝</i> <button id="AdjustmentRequest">Adjustment</button></li>
+        </ul>
+      </nav>
+      <div class="current-view">
+        <h4>Current View</h4>
+        <div class="view selected">
+          <i class="icon">🤝</i>
+          Meeting
+        </div>
+        <div class="view">
+          <i class="icon">☁️</i>
+          Scheduling
+        </div>
+      </div>
+      <button class="event-btn">Upcoming Event</button>
+    </aside>
+
+  <!-- Main Panel -->
+  <div class="main">
+    <!-- Header -->
+    <div class="header">
+      <div class="left">
+        <h1>Dashboard</h1>
+      </div>
+      <div class="right">
+        <h4 id="week">Today</h4>
+        <p><strong id="date">14/7/2025</strong></p>
+        <p class="time">1:26:47 pm</p>
+        <p class="teacher-name"><strong id="TeacherName">TeacherName (Teacher)</strong></p>
+      </div>
+    </div>
+    <div id="dashboard-content" style="display: block;">
+    <div class="cards">
+      <div class="card blue">
+        <i class="fas fa-calendar-check"></i>
+        <div>
+          <h4></h4>
+          <p>Total Lectures</p>
+        </div>
+      </div>
+      <div class="card purple">
+        <i class="fas fa-clock"></i>
+        <div>
+          <h4>0</h4>
+          <p>Total Left</p>
+        </div>
+      </div>
+      <div class="card green">
+        <i class="fas fa-check-circle"></i>
+        <div>
+          <h4>0</h4>
+          <p>Total Done</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sections -->
+    <div class="sections">
+      <div class="section-box">
+        <h3>Upcoming Adjustments</h3>
+        <p>No adjustments scheduled yet.</p>
+      </div>
+      <div class="section-box">
+        <h3>Today's Schedules</h3>
+        <p>Upcoming soon...</p>
+      </div>
+      <div class="section-box">
+        <h3>Adjustment Proposals</h3>
+        <p>Not scheduled yet.</p>
+      </div>
+    </div>
+   </div>
+<div id="timetable-content" style="display: none;">
+  <section class="table-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Days/Time</th>
+              <th>Period 1</th>
+              <th>Period 2</th>
+              <th>Period 3</th>
+              <th>Period 4</th>
+              <th>Period 5</th>
+              <th>Period 6</th>
+              <th>Period 7</th>
+              <th>Period 8</th>
+            </tr>
+          </thead>
+          <tbody>
+        <tr><th id="Monday">Monday</th><td id="Monday-Period 1"></td><td id="Monday-Period 2"></td><td id="Monday-Period 3"></td><td id="Monday-Period 4"></td><td id="Monday-Period 5"></td><td id="Monday-Period 6"></td><td id="Monday-Period 7"></td><td id="Monday-Period 8"></td></tr>
+        <tr><th id="Tuesday">Tuesday</th><td id="Tuesday-Period 1"></td><td id="Tuesday-Period 2"></td><td id="Tuesday-Period 3"></td><td id="Tuesday-Period 4"></td><td id="Tuesday-Period 5"></td><td id="Tuesday-Period 6"></td><td id="Tuesday-Period 7"></td><td id="Tuesday-Period 8"></td></tr>
+        <tr><th id="Wednesday">Wednesday</th><td id="Wednesday-Period 1"></td><td id="Wednesday-Period 2"></td><td id="Wednesday-Period 3"></td><td id="Wednesday-Period 4"></td><td id="Wednesday-Period 5"></td><td id="Wednesday-Period 6"></td><td id="Wednesday-Period 7"></td><td id="Wednesday-Period 8"></td></tr>
+        <tr><th id="Thursday">Thursday</th><td id="Thursday-Period 1"></td><td id="Thursday-Period 2"></td><td id="Thursday-Period 3"></td><td id="Thursday-Period 4"></td><td id="Thursday-Period 5"></td><td id="Thursday-Period 6"></td><td id="Thursday-Period 7"></td><td id="Thursday-Period 8"></td></tr>
+        <tr><th id="Friday">Friday</th><td id="Friday-Period 1"></td><td id="Friday-Period 2"></td><td id="Friday-Period 3"></td><td id="Friday-Period 4"></td><td id="Friday-Period 5"></td><td id="Friday-Period 6"></td><td id="Friday-Period 7"></td><td id="Friday-Period 8"></td></tr>
+        <tr><th id="Saturday">Saturday</th><td id="Saturday-Period 1"></td><td id="Saturday-Period 2"></td><td id="Saturday-Period 3"></td><td id="Saturday-Period 4"></td><td id="Saturday-Period 5"></td><td id="Saturday-Period 6"></td><td id="Saturday-Period 7"></td><td id="Saturday-Period 8"   ></td></tr>
+          </tbody>
+        </table>
+      </section>
+  </div>
+<div id="AppealLeaveContent" style="display: none;">
+ <div class="form-box">
+    <h3 style="color: rgb(128, 198, 165);">Apply Leave</h3>
+
+    <label for="leaveType">Leave Type</label>
+    <select id="leaveType">
+      <option value="">Select</option>
+      <option value="casual">Casual Leave</option>
+      <option value="sick">Sick Leave</option>
+      <option value="vacation">Vacation Leave</option>
+    </select>
+
+    <label for="applier">Applier</label>
+    <input type="text" id="applier" placeholder="Enter approver name">
+    <lable for="email">Email:</lable>
+    <input type="email" id="email" placeholder="Enter your email">
+   
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" placeholder="Enetr the subject"></input>
+    <label for="Date">Date</label>
+    <input type="date" id="Date">
+
+    <label for="reason">Reason</label>
+    <textarea id="reason" rows="4" placeholder="Enter reason..."></textarea>
+
+    <div class="button-group">
+      <button class="apply">Apply</button>
+    </div>
+  </div>
+  </div>
+  <div id="showleave" style="display: none;">
+    <div id="leave">
+
+    </div>
+  </div>
+  <div id="adjust" style="display: none;" >
+        <div id="alecture">
+          
+        </div>
+  </div>
+
+</div>
+<script src="./js/Teacher.js"></script>
+</body>
+</html>
